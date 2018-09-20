@@ -1,0 +1,42 @@
+<Template name="userlist">
+    {{#if isAdmin}}
+    <h2 style="text-align: center;">Lista de usuarios</h2>
+    <div class="form-group">
+        <input type="text" class="form-control" id="search" autocomplete="off" placeholder="Buscar...">
+    </div>
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Username</th>
+                <th>Nombres</th>
+                <th>Apellidos</th>
+                <th>Permisos</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each lusers}}
+                <tr>
+                    <td>{{realIndex @index}}</td>
+                    <td>{{username}}</td>
+                    <td>{{profile.nombres}}</td>
+                    <td>{{profile.apellidos}}</td>
+                    <td>
+                        {{#if isAdminUser this}}
+                            <button class="btn btn-danger" type="button" id="admin">Quitar Admin</button>
+                        {{else}}
+                            <button class="btn btn-primary" type="button" id="admin">Aderir Admin</button>
+                        {{/if}}
+                    </td>
+                </tr>
+            {{else}}
+                <tr>
+                    <td colspan="5"><h2 style="text-align: center;">No existen Datos</h2></td>
+                </tr>
+            {{/each}}
+        </tbody>
+    </table>
+    {{else}}
+        <h2 style="text-align: center;">No esta autorizado para ver este apartado</h2>
+    {{/if}}
+</Template>

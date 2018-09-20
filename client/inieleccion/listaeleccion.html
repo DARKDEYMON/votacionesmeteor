@@ -1,0 +1,34 @@
+<Template name="listaeleccion">
+    {{#if isAdmin}}
+    <h2 style="text-align: center;">Lista de Elecciones</h2>
+    <div class="form-group">
+        <input type="text" class="form-control" id="search" autocomplete="off" placeholder="Buscar...">
+    </div>
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Nombre</th>
+                <th>Descripcion</th>
+                <th>Opciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each lelecciones}}
+                <tr>
+                    <td>{{realIndex @index}}</td>
+                    <td>{{nombre}}</td>
+                    <td>{{descripcion}}</td>
+                    <td><a href="" type="submit" class="btn btn-primary">Insertar Boto</a></td>
+                </tr>
+            {{else}}
+                <tr>
+                    <td colspan="3"><h2 style="text-align: center;">No existen Datos</h2></td>
+                </tr>
+            {{/each}}
+        </tbody>
+    </table>
+    {{else}}
+        <h2 style="text-align: center;">No esta autorizado para ver este apartado</h2>
+    {{/if}}
+</Template>

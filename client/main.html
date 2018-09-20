@@ -1,0 +1,20 @@
+<template name="index">
+  {{> navbar}}
+  {{> Template.dynamic template=body}}
+</template>
+
+<Template name="baseform">
+    {{> index}}
+    <div class="container well">
+      {{> Template.dynamic template=baseform}}
+    </div>
+</Template>
+
+<template name="baselist">
+  {{> index}}
+  <div class="container well">
+    <div class="table-responsive">
+        {{> Template.dynamic template=baselist}}
+    </div>
+  </div>
+</template>

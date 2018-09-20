@@ -1,0 +1,7 @@
+<Template name="createuser">
+    {{#if isAdmin}}
+        {{>atForm state='signUp'}}
+    {{else}}
+        <h2 style="text-align: center;">No esta autorizado para ver este apartado</h2>
+    {{/if}}
+</Template>

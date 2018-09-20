@@ -1,0 +1,11 @@
+<Template name="createeleccion">
+    {{#autoForm collection="eleccion" id="inserteleccion" type="insert" omitFields="partidos.$.botos"}}
+        <fieldset>
+            <legend class="text-center"><h3>Insertar Eleccion</h3></legend>
+            {{> afQuickField name='nombre'}}
+            {{> afQuickField name='descripcion' rows=6}}
+            {{> afQuickField name="partidos"}}
+        </fieldset>
+        <button type="submit" class="btn btn-primary center-block">Insertar</button>
+    {{/autoForm}}
+</Template>
